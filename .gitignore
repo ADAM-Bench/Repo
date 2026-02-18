@@ -1,0 +1,67 @@
+# macOS / editor
+.DS_Store
+**/.DS_Store
+
+# Python cache/build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Secrets / local env
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime outputs
+*.log
+leaderboard/runs/
+
+# Local data and release artifacts
+data/
+release/
+ICLR_All_Years_Raw.jsonl
+
+# Internal/local files
+PLAN.md
+533_Who_s_Adam_Benchmarking_Ha.pdf
+
+# Temporarily exclude all README files
+README*
+**/README*
+
+# Exclude ACM SIG template folder
+Association_for_Computing_Machinery__ACM____SIG_Proceedings_Template/
+
+# Public upload scope (exclude local/demo web apps and local configs)
+annotation_app/
+assets/
+index.html
+leaderboard/app/
+leaderboard/llm_runner.py
+leaderboard/vlm_runner.py
+configs/build_core.yaml
+configs/build_scale.yaml
+
+# Keep only core pipeline scripts for public upload
+scripts/*
+!scripts/00_fetch_openreview.py
+!scripts/01_build_threads.py
+!scripts/03_build_evidence_objects.py
+!scripts/04_select_candidate_utterances.py
+!scripts/05_extract_claims_llm.py
+!scripts/06_retrieve_evidence_candidates.py
+!scripts/07_localize_evidence_llm_align.py
+!scripts/11_make_splits.py
+
+# Explicitly exclude backfill helpers
+scripts/12_backfill_layer_gaps.py
+scripts/13_count_layer_gaps.py
+scripts/14_backfill_eobjs.py

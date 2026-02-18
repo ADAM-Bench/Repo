@@ -1,0 +1,50 @@
+dataset_version: "0.2"
+venue: "ICLR"
+years: [2018,2019,2020,2021,2022,2023,2024,2025]
+include_2026_initial_only: false  # Keep false by default: 2026 reply chains may be incomplete.
+license_allowlist: []
+min_dialogue_requirements:
+  must_have_invitation_prefixes:
+    - "Official_Review"
+    - "Decision"  # "Meta_Review" is also accepted by the filtering logic.
+quality_filters:
+  min_tokens_per_utterance: 30
+  max_tokens_per_claim: 60
+  require_checkable: true
+  dedup_sim_threshold: 0.92
+splits:
+  dev_ratio: 0.1
+  test_ratio: 0.2
+  stratify_by: ["year", "primary_area"]
+  random_seed: 13
+retrieval:
+  topk_sparse: 50
+  topk_dense: 50
+  topk_fused: 60
+  anchor_boost: 20
+localization:
+  max_quotes_per_evidence: 2
+  max_quote_chars: 140
+  bbox_merge_strategy: "union"
+qc:
+  require_supported_has_evidence: true
+  allow_not_found_empty_evidence: true
+  evidence_minimize: true
+paths:
+  raw_openreview: "data/raw/openreview.jsonl"
+  manifests: "data/manifests/papers.jsonl"
+  threads: "data/threads/threads.jsonl"
+  mineru_dir: "data/mineru"
+  pdf_dir: ""  # optional local PDF directory, e.g. "/path/to/pdfs"
+  evidence_parquet: "data/evidence/eobjs.parquet"
+  anchor_index: "data/evidence/anchor_index.jsonl"
+  candidate_utterances: "data/claimcards/candidate_utterances.jsonl"
+  claimcards: "data/claimcards/claimcards.jsonl"
+  retrieval: "data/claimcards/retrieval.jsonl"
+  locator: "data/claimcards/locator.jsonl"
+  annotations_dir: "data/annotations"
+  gold: "data/gold/gold.jsonl"
+  gold_clean: "data/gold/gold_clean.jsonl"
+  gold_dev: "data/gold/gold_dev.jsonl"
+  gold_test: "data/gold/gold_test.jsonl"
+  gold_train: "data/gold/gold_train.jsonl"

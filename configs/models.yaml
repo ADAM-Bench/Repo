@@ -1,0 +1,46 @@
+openreview:
+  client: "openreview-py"
+  api_baseurl: "https://api2.openreview.net"
+mineru:
+  mode: "pipeline"
+  outputs: ["md", "content_list.json", "middle.json"]
+embedding:
+  model: "tfidf"
+  api_base: "https://api.example.com/v1"  # Example endpoint.
+  api_key_env: "EMBEDDING_API_KEY"  # Example environment variable name.
+  batch_size: 64
+sparse:
+  engine: "bm25"
+late_interaction:
+  enabled: false
+  model: "colbertv2"
+nli_verifier:
+  model: "heuristic"  # fallback
+llm:
+  extractor: "heuristic"
+  locator: "model-placeholder"
+  judge: "heuristic"
+  api_base: "https://api.example.com/v1"  # Example endpoint.
+  api_key_env: "LLM_API_KEY"  # Example environment variable name.
+  temperature: 0.0
+  disable_thinking: true
+  thinking_type: null  # e.g. adaptive
+  thinking_effort: null  # e.g. max/high/medium/low
+  thinking_failover_to_gold: true
+  max_output_tokens: 1536
+  leaderboard_max_output_tokens: 256
+  leaderboard_max_output_tokens_by_model:
+    model-placeholder: 1024
+  max_claims_per_utterance: null
+  fuzzy_match: true
+  available_models:
+    - "model-placeholder"
+    - "model-placeholder-2"
+  selected_models:
+    - model-placeholder
+  qwen_models:
+    - model-placeholder
+  selected_vlm_models:
+    - vlm-placeholder
+  qwen_vlm_models:
+    - vlm-placeholder
