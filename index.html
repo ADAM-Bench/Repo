@@ -1,10 +1,424 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ADAM-Bench</title>
-  </head>
-  <body>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADAM-Bench | Benchmark Project Page</title>
+  <meta
+    name="description"
+    content="ADAM-Bench is a benchmark for paper-grounded hallucination detection and minimal evidence localization in scientific dialogue."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/home.css" />
+  <script defer src="assets/home.js"></script>
+</head>
+<body>
+  <div class="bg-shape shape-a" aria-hidden="true"></div>
+  <div class="bg-shape shape-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">ADAM-Bench</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#overview">Overview</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#systems">Codebase</a>
+        <a href="#scripts">Pipeline</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Benchmark Project Page</p>
+        <h1>ADAM-Bench: Auditing Scientific Dialogue with Paper-Grounded Evidence</h1>
+        <p class="hero-desc">
+          ADAM-Bench evaluates whether scientific dialogue claims are supported by evidence in the corresponding paper PDF.
+          The public release includes layered benchmark data, annotation system code, leaderboard code, and key data processing scripts.
+        </p>
+
+        <div class="quick-links">
+          <a class="link-card" href="533_Who_s_Adam_Benchmarking_Ha.pdf" target="_blank" rel="noopener">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"></path>
+                <path d="M14 2v5h5"></path>
+                <path d="M9 13h6"></path>
+                <path d="M9 17h6"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>Paper</strong>
+              <small>Who&apos;s Adam? Benchmarking Hallucinations in Scientific Dialogue</small>
+            </span>
+          </a>
+          <a class="link-card" href="https://github.com/jzzzzh/HiBench" target="_blank" rel="noopener">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.8-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.7 11.7 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2v2.9c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>GitHub Repository</strong>
+              <small>Code, benchmark assets, scripts, and deployment files</small>
+            </span>
+          </a>
+          <a class="link-card" href="#" aria-disabled="true">
+            <span class="link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="M7 10l5 5 5-5"></path>
+                <path d="M12 15V3"></path>
+              </svg>
+            </span>
+            <span>
+              <strong>Dataset Cloud Download</strong>
+              <small>Mirror link placeholder (to be updated)</small>
+            </span>
+          </a>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#downloads">Download Layer Archives</a>
+          <a class="btn ghost" href="https://github.com/jzzzzh/HiBench" target="_blank" rel="noopener">View Code</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <p class="panel-title">Layer Statistics (Paper Setting)</p>
+        <div class="mini-grid">
+          <div>
+            <span class="mini-key">Scale Papers</span>
+            <span class="mini-value">27,532</span>
+          </div>
+          <div>
+            <span class="mini-key">Scale Claims</span>
+            <span class="mini-value">1,159,103</span>
+          </div>
+          <div>
+            <span class="mini-key">Scale EObjs</span>
+            <span class="mini-value">7,834,351</span>
+          </div>
+          <div>
+            <span class="mini-key">Core Papers</span>
+            <span class="mini-value">3,000</span>
+          </div>
+          <div>
+            <span class="mini-key">Core Claims</span>
+            <span class="mini-value">114,320</span>
+          </div>
+          <div>
+            <span class="mini-key">Core EObjs</span>
+            <span class="mini-value">799,289</span>
+          </div>
+          <div>
+            <span class="mini-key">Gold Papers</span>
+            <span class="mini-value">563</span>
+          </div>
+          <div>
+            <span class="mini-key">Gold Claims</span>
+            <span class="mini-value">5,821</span>
+          </div>
+          <div>
+            <span class="mini-key">Gold Cited EObjs</span>
+            <span class="mini-value">69,852</span>
+          </div>
+        </div>
+        <p class="panel-note">
+          Source: Table 2 (<code>tab:layer_stats</code>) in the paper.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section reveal" id="overview">
+      <div class="section-head">
+        <p class="eyebrow">Overview</p>
+        <h2>Public Benchmark Components</h2>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card">
+          <p class="stat-label">Layered Data Release</p>
+          <p class="stat-value" data-count="3">3</p>
+          <p class="stat-note">Scale, Core, and Gold layers for staged research usage.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-label">Download Archives</p>
+          <p class="stat-value" data-count="3">3</p>
+          <p class="stat-note">Layer-level tarballs with SHA256 checksum files.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-label">Benchmark Tasks</p>
+          <p class="stat-value" data-count="2">2</p>
+          <p class="stat-note">Task A: label prediction. Task B: minimal evidence localization.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-label">Evaluation Metrics</p>
+          <p class="stat-value" data-count="3">3</p>
+          <p class="stat-note">Macro-F1, Evidence-F1, and FEVER-style end-to-end score.</p>
+        </article>
+      </div>
+      <div class="tier-grid">
+        <article class="tier-card">
+          <h3>Task A</h3>
+          <p>4-way paper-grounded claim classification: SUPPORTED, CONTRADICTED, NOT_FOUND, UNDECIDABLE.</p>
+        </article>
+        <article class="tier-card">
+          <h3>Task B</h3>
+          <p>Minimal evidence set localization over unified evidence objects (<code>eobj_id</code>).</p>
+        </article>
+        <article class="tier-card">
+          <h3>Protocol</h3>
+          <p>Gold uses set-of-sets evidence supervision and best-match scoring for robust evaluation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="downloads">
+      <div class="section-head">
+        <p class="eyebrow">Downloads</p>
+        <h2>Layered Release Packages</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Archive</th>
+              <th>Size</th>
+              <th>SHA256</th>
+              <th>Links</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Scale</td>
+              <td><code>adam-bench-scale-v0.2.tar.gz</code></td>
+              <td>1,891,198,413 bytes</td>
+              <td><code>d0db814aa5510f0734cbfd94b6c9ebc56022636743aa65bd12be0babb4ff82f0</code></td>
+              <td>
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-scale-v0.2.tar.gz" target="_blank" rel="noopener">download</a>
+                ·
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-scale-v0.2.tar.gz.sha256" target="_blank" rel="noopener">sha256</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Core</td>
+              <td><code>adam-bench-core-v0.2.tar.gz</code></td>
+              <td>1,973,556,071 bytes</td>
+              <td><code>46c6a777cc846d03efb3ffccc750aecb340187147d04583a24b9337f4234fc95</code></td>
+              <td>
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-core-v0.2.tar.gz" target="_blank" rel="noopener">download</a>
+                ·
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-core-v0.2.tar.gz.sha256" target="_blank" rel="noopener">sha256</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Gold</td>
+              <td><code>adam-bench-gold-v0.2.tar.gz</code></td>
+              <td>2,075,173,563 bytes</td>
+              <td><code>7f527218f6a36b688bb89f946d8aa7e7c11fa380cdbcc05256cb48b40a967abb</code></td>
+              <td>
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-gold-v0.2.tar.gz" target="_blank" rel="noopener">download</a>
+                ·
+                <a class="inline-link" href="release/adam-bench-v0.2-layered/dist/adam-bench-gold-v0.2.tar.gz.sha256" target="_blank" rel="noopener">sha256</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">
+        Cloud mirror: <a class="inline-link" href="#" aria-disabled="true">TBD</a>
+      </p>
+    </section>
+
+    <section class="section reveal" id="systems">
+      <div class="section-head">
+        <p class="eyebrow">Codebase</p>
+        <h2>Annotation System and Leaderboard Implementation</h2>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="annotation_app/server.py" target="_blank" rel="noopener">
+          <h3>Annotation Service</h3>
+          <p><code>annotation_app/server.py</code></p>
+        </a>
+        <a class="resource-card" href="annotation_app/static/index.html" target="_blank" rel="noopener">
+          <h3>Annotation UI</h3>
+          <p><code>annotation_app/static/index.html</code></p>
+        </a>
+        <a class="resource-card" href="leaderboard/app/server.py" target="_blank" rel="noopener">
+          <h3>Leaderboard Backend</h3>
+          <p><code>leaderboard/app/server.py</code></p>
+        </a>
+        <a class="resource-card" href="leaderboard/app/static/index.html" target="_blank" rel="noopener">
+          <h3>Leaderboard Frontend</h3>
+          <p><code>leaderboard/app/static/index.html</code></p>
+        </a>
+        <a class="resource-card" href="src/reviewground/eval/evaluate.py" target="_blank" rel="noopener">
+          <h3>Official Evaluator</h3>
+          <p><code>src/reviewground/eval/evaluate.py</code></p>
+        </a>
+      </div>
+      <div class="code-grid">
+        <article>
+          <h3>Run Evaluator (Code-Only Example)</h3>
+          <pre><code>PYTHONPATH=src python3 -m reviewground.eval.evaluate \
+  --gold /path/to/gold.dev.jsonl \
+  --pred /path/to/predictions.jsonl</code></pre>
+        </article>
+        <article>
+          <h3>Launch Leaderboard Service</h3>
+          <pre><code>PYTHONPATH=src python3 leaderboard/app/server.py \
+  --config configs/build_core.yaml \
+  --models configs/models.yaml \
+  --runs-dir leaderboard/runs \
+  --host 127.0.0.1 --port 9000</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="scripts">
+      <div class="section-head">
+        <p class="eyebrow">Pipeline</p>
+        <h2>Key Processing Scripts</h2>
+      </div>
+      <div class="resource-grid key-scripts">
+        <a class="resource-card" href="scripts/00_fetch_openreview.py" target="_blank" rel="noopener">
+          <h3>Data Fetching</h3>
+          <p><code>scripts/00_fetch_openreview.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/01_build_threads.py" target="_blank" rel="noopener">
+          <h3>Thread Structuring</h3>
+          <p><code>scripts/01_build_threads.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/03_build_evidence_objects.py" target="_blank" rel="noopener">
+          <h3>Evidence Objects</h3>
+          <p><code>scripts/03_build_evidence_objects.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/05_extract_claims_llm.py" target="_blank" rel="noopener">
+          <h3>Claim Extraction</h3>
+          <p><code>scripts/05_extract_claims_llm.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/06_retrieve_evidence_candidates.py" target="_blank" rel="noopener">
+          <h3>Candidate Retrieval</h3>
+          <p><code>scripts/06_retrieve_evidence_candidates.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/07_localize_evidence_llm_align.py" target="_blank" rel="noopener">
+          <h3>Evidence Localization</h3>
+          <p><code>scripts/07_localize_evidence_llm_align.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/08_export_annotation_packets.py" target="_blank" rel="noopener">
+          <h3>Annotation Export</h3>
+          <p><code>scripts/08_export_annotation_packets.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/09_ingest_gold_annotations.py" target="_blank" rel="noopener">
+          <h3>Gold Ingestion</h3>
+          <p><code>scripts/09_ingest_gold_annotations.py</code></p>
+        </a>
+        <a class="resource-card" href="scripts/11_make_splits.py" target="_blank" rel="noopener">
+          <h3>Split Builder</h3>
+          <p><code>scripts/11_make_splits.py</code></p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section reveal" id="leaderboard">
+      <div class="section-head">
+        <p class="eyebrow">Leaderboard</p>
+        <h2>Table 7 Snapshot (Gold-dev, Provided-Evidence)</h2>
+      </div>
+      <p class="table-note">
+        Values are reproduced from Table 7 in <em>Who&apos;s Adam? Benchmarking Hallucinations in Scientific Dialogue</em>.
+      </p>
+      <div class="task-grid">
+        <article class="task-card">
+          <h3>Text Models (LLMs)</h3>
+          <div class="table-wrap">
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Model</th>
+                  <th>Macro-F1</th>
+                  <th>Evidence-F1</th>
+                  <th>FEVER</th>
+                  <th>Avg</th>
+                  <th>Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="rank-badge">1</span></td><td>GPT-5.2</td><td>45.6</td><td>55.1</td><td>51.0</td><td><strong>50.4</strong></td><td>198</td></tr>
+                <tr><td><span class="rank-badge">2</span></td><td>Claude-Opus-4-6</td><td>42.8</td><td><strong>57.2</strong></td><td>49.3</td><td>50.0</td><td>186</td></tr>
+                <tr><td><span class="rank-badge">3</span></td><td>Qwen-Plus</td><td>42.3</td><td>56.5</td><td>45.5</td><td>49.4</td><td>178</td></tr>
+                <tr><td><span class="rank-badge">4</span></td><td>Grok-4.1</td><td>44.2</td><td>54.1</td><td>51.0</td><td>49.2</td><td>187</td></tr>
+                <tr><td><span class="rank-badge">5</span></td><td>Qwen3-235B-A22B-Instruct-2507</td><td>44.3</td><td>54.0</td><td>40.5</td><td>49.2</td><td>174</td></tr>
+                <tr><td><span class="rank-badge">6</span></td><td>Qwen3-Max</td><td>43.9</td><td>54.0</td><td>45.2</td><td>49.0</td><td>181</td></tr>
+                <tr><td><span class="rank-badge">7</span></td><td>Gemini-3-Flash-Preview</td><td>44.1</td><td>53.4</td><td>46.6</td><td>48.8</td><td>179</td></tr>
+                <tr><td><span class="rank-badge">8</span></td><td>Qwen-Max</td><td>39.8</td><td>55.9</td><td>38.3</td><td>47.9</td><td>167</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="task-card">
+          <h3>Multimodal Models (LMMs)</h3>
+          <div class="table-wrap">
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Model</th>
+                  <th>Macro-F1</th>
+                  <th>Evidence-F1</th>
+                  <th>FEVER</th>
+                  <th>Avg</th>
+                  <th>Wins</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="rank-badge">1</span></td><td>Qwen3-VL-Plus 235B</td><td><strong>47.4</strong></td><td>54.8</td><td>43.8</td><td><strong>51.1</strong></td><td>48</td></tr>
+                <tr><td><span class="rank-badge">2</span></td><td>Qwen3-VL-Max</td><td>45.8</td><td>54.6</td><td><strong>46.6</strong></td><td>50.2</td><td>44</td></tr>
+                <tr><td><span class="rank-badge">3</span></td><td>Qwen2.5-VL-32B-Instruct</td><td>40.5</td><td><strong>55.7</strong></td><td>41.6</td><td>48.1</td><td>35</td></tr>
+                <tr><td><span class="rank-badge">4</span></td><td>GLM-4.6V 106B</td><td>37.3</td><td>53.2</td><td>38.0</td><td>45.2</td><td>28</td></tr>
+                <tr><td><span class="rank-badge">5</span></td><td>Gemini-3-Flash</td><td>23.5</td><td>39.0</td><td>40.5</td><td>31.2</td><td>14</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal citation" id="citation">
+      <div class="section-head">
+        <p class="eyebrow">Citation</p>
+        <h2>BibTeX</h2>
+      </div>
+      <pre id="bibtex"><code>@misc{adam_bench_2026,
+  title        = {Who&apos;s Adam? Benchmarking Hallucinations in Scientific Dialogue},
+  author       = {Zexing Zhang and Tianyang Lei and Kewei Yang and Jichao Li},
+  year         = {2026},
+  note         = {ADAM-Bench / ReviewGround-Bench v0.2},
+  howpublished = {GitHub repository}
+}</code></pre>
+      <button class="btn ghost copy-btn" id="copyBib">Copy BibTeX</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>ADAM-Bench</strong> · Auditing Dialogue Assertions with Multimodal Evidence</p>
+      <p>
+        Contact: <a href="mailto:zacheryzhang@163.com">zacheryzhang@163.com</a>
+        · <span id="year"></span>
+      </p>
+    </div>
+  </footer>
+</body>
 </html>
