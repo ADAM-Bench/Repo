@@ -42,8 +42,6 @@ Association_for_Computing_Machinery__ACM____SIG_Proceedings_Template/
 
 # Public upload scope (exclude local/demo web apps and local configs)
 annotation_app/
-assets/
-index.html
 leaderboard/app/
 leaderboard/llm_runner.py
 leaderboard/vlm_runner.py
