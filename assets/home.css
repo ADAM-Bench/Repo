@@ -279,6 +279,7 @@ h3 {
 
 .layer-stack {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -287,6 +288,10 @@ h3 {
   border-radius: 14px;
   padding: 12px;
   background: rgba(255, 255, 255, 0.82);
+}
+
+.layer-stat:last-child {
+  grid-column: 1 / -1;
 }
 
 .layer-head {
@@ -418,8 +423,10 @@ h3 {
 }
 
 .figure-image {
+  display: block;
   width: 100%;
-  height: 340px;
+  max-width: 100%;
+  height: clamp(200px, 26vw, 280px);
   object-fit: contain;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -768,8 +775,16 @@ code {
     gap: 4px;
   }
 
+  .layer-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .layer-stat:last-child {
+    grid-column: auto;
+  }
+
   .figure-image {
-    height: 260px;
+    height: clamp(170px, 50vw, 220px);
   }
 
   .bar-row {
