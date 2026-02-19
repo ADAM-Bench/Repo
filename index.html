@@ -95,44 +95,69 @@
 
       <aside class="hero-panel">
         <p class="panel-title">Layer Statistics (Paper Setting)</p>
-        <div class="mini-grid">
-          <div class="mini-stat">
-            <span class="mini-key">Scale Papers</span>
-            <span class="mini-value" data-count="27532">27,532</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Scale Claims</span>
-            <span class="mini-value" data-count="1159103">1,159,103</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Scale EObjs</span>
-            <span class="mini-value" data-count="7834351">7,834,351</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Core Papers</span>
-            <span class="mini-value" data-count="3000">3,000</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Core Claims</span>
-            <span class="mini-value" data-count="114320">114,320</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Core EObjs</span>
-            <span class="mini-value" data-count="799289">799,289</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Gold Papers</span>
-            <span class="mini-value" data-count="563">563</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Gold Claims</span>
-            <span class="mini-value" data-count="5821">5,821</span>
-          </div>
-          <div class="mini-stat">
-            <span class="mini-key">Gold Cited EObjs</span>
-            <span class="mini-value" data-count="69852">69,852</span>
-          </div>
+        <div class="layer-stack">
+          <article class="layer-stat">
+            <div class="layer-head">
+              <h3>Scale</h3>
+              <span>Coarse Recall Layer</span>
+            </div>
+            <dl class="layer-kv">
+              <div>
+                <dt>Papers</dt>
+                <dd data-count="27532">27,532</dd>
+              </div>
+              <div>
+                <dt>Claims</dt>
+                <dd data-count="1159103">1,159,103</dd>
+              </div>
+              <div>
+                <dt>EObjs</dt>
+                <dd data-count="7834351">7,834,351</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="layer-stat">
+            <div class="layer-head">
+              <h3>Core</h3>
+              <span>Model-Assisted Layer</span>
+            </div>
+            <dl class="layer-kv">
+              <div>
+                <dt>Papers</dt>
+                <dd data-count="3000">3,000</dd>
+              </div>
+              <div>
+                <dt>Claims</dt>
+                <dd data-count="114320">114,320</dd>
+              </div>
+              <div>
+                <dt>EObjs</dt>
+                <dd data-count="799289">799,289</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="layer-stat">
+            <div class="layer-head">
+              <h3>Gold</h3>
+              <span>Human-Verified Layer</span>
+            </div>
+            <dl class="layer-kv">
+              <div>
+                <dt>Papers</dt>
+                <dd data-count="563">563</dd>
+              </div>
+              <div>
+                <dt>Claims</dt>
+                <dd data-count="5821">5,821</dd>
+              </div>
+              <div>
+                <dt>Cited EObjs</dt>
+                <dd data-count="69852">69,852</dd>
+              </div>
+            </dl>
+          </article>
         </div>
+        <p class="panel-note">Source: Table 2 in <code>Adam_Benchmark.pdf</code>.</p>
       </aside>
     </section>
 
@@ -182,30 +207,37 @@
     <section class="section reveal" id="examples">
       <div class="section-head">
         <p class="eyebrow">Examples</p>
-        <h2>PDF Evidence Examples</h2>
+        <h2>Paper Figure Examples (PNG)</h2>
       </div>
       <div class="example-grid">
         <article class="example-card">
-          <h3>Example Figure 1</h3>
-          <p>Reference sample from the benchmark evidence space.</p>
-          <iframe
-            class="pdf-frame"
-            src="assets/fig1.pdf#view=FitH"
-            title="ADAM-Bench example fig1"
-          ></iframe>
-          <a class="inline-link" href="assets/fig1.pdf" target="_blank" rel="noopener">Open <code>assets/fig1.pdf</code></a>
+          <h3>Figure 1</h3>
+          <img
+            class="figure-image"
+            src="assets/fig1.png"
+            alt="Figure 1 of ADAM-Bench paper"
+            loading="lazy"
+          />
+          <p class="figure-caption">
+            <strong>Paper caption:</strong> ADAM-Bench aligns atomic claims in scientific dialogue with multimodal evidence objects in the corresponding paper PDF. It enables paper-grounded hallucination detection (4-way grounding) and minimal evidence set localization with set-of-sets gold rationales at scale.
+          </p>
+          <a class="inline-link" href="assets/fig1.png" target="_blank" rel="noopener">Open <code>assets/fig1.png</code></a>
         </article>
         <article class="example-card">
-          <h3>Example Figure 2</h3>
-          <p>Additional sample for inspection and UI integration tests.</p>
-          <iframe
-            class="pdf-frame"
-            src="assets/fig2.pdf#view=FitH"
-            title="ADAM-Bench example fig2"
-          ></iframe>
-          <a class="inline-link" href="assets/fig2.pdf" target="_blank" rel="noopener">Open <code>assets/fig2.pdf</code></a>
+          <h3>Figure 2</h3>
+          <img
+            class="figure-image"
+            src="assets/fig2.png"
+            alt="Figure 2 of ADAM-Bench paper"
+            loading="lazy"
+          />
+          <p class="figure-caption">
+            <strong>Paper caption:</strong> Four-stage construction pipeline and layer refinement: starting from raw PDFs, we extract multimodal evidence objects and align them with dialogue claims, progressively refining supervision from Scale (coarse recall) to Core (model-assisted pre-alignment) and Gold (human-verified minimal evidence).
+          </p>
+          <a class="inline-link" href="assets/fig2.png" target="_blank" rel="noopener">Open <code>assets/fig2.png</code></a>
         </article>
       </div>
+      <p class="table-note">Figure captions are referenced from <code>Adam_Benchmark.pdf</code>.</p>
     </section>
 
     <section class="section reveal" id="downloads">
