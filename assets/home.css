@@ -163,6 +163,33 @@ h1 {
   font-size: clamp(2rem, 4.2vw, 3.05rem);
 }
 
+.adam-word {
+  white-space: nowrap;
+}
+
+.adam-a1,
+.adam-d,
+.adam-a2,
+.adam-m {
+  font-weight: 800;
+}
+
+.adam-a1 {
+  color: var(--accent);
+}
+
+.adam-d {
+  color: var(--accent-2);
+}
+
+.adam-a2 {
+  color: var(--accent-warm);
+}
+
+.adam-m {
+  color: #b14427;
+}
+
 h2 {
   font-size: clamp(1.45rem, 2.9vw, 2rem);
 }
