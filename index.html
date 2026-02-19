@@ -26,6 +26,7 @@
       <a class="brand" href="#top">ADAM-Bench</a>
       <nav class="main-nav" id="mainNav">
         <a href="#overview">Overview</a>
+        <a href="#examples">Examples</a>
         <a href="#downloads">Downloads</a>
         <a href="#systems">Codebase</a>
         <a href="#scripts">Pipeline</a>
@@ -60,7 +61,7 @@
               <small>Who&apos;s Adam? Benchmarking Hallucinations in Scientific Dialogue</small>
             </span>
           </a>
-          <a class="link-card" href="https://github.com/jzzzzh/HiBench" target="_blank" rel="noopener">
+          <a class="link-card" href="https://github.com/ADAM-Bench/Repo" target="_blank" rel="noopener">
             <span class="link-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.4 3.6 1.1.1-.8.4-1.4.8-1.8-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.7 11.7 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2v2.9c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"></path>
@@ -71,7 +72,7 @@
               <small>Code, benchmark assets, scripts, and deployment files</small>
             </span>
           </a>
-          <a class="link-card" href="https://pan.quark.cn/s/27058a90f9bd" target="_blank" rel="noopener">
+          <a class="link-card" href="https://pan.quark.cn/s/a82f69b98c97" target="_blank" rel="noopener">
             <span class="link-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -88,53 +89,50 @@
 
         <div class="hero-actions">
           <a class="btn primary" href="#downloads">Download Layer Archives</a>
-          <a class="btn ghost" href="https://github.com/jzzzzh/HiBench" target="_blank" rel="noopener">View Code</a>
+          <a class="btn ghost" href="https://github.com/ADAM-Bench/Repo" target="_blank" rel="noopener">View Code</a>
         </div>
       </div>
 
       <aside class="hero-panel">
         <p class="panel-title">Layer Statistics (Paper Setting)</p>
         <div class="mini-grid">
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Scale Papers</span>
-            <span class="mini-value">27,532</span>
+            <span class="mini-value" data-count="27532">27,532</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Scale Claims</span>
-            <span class="mini-value">1,159,103</span>
+            <span class="mini-value" data-count="1159103">1,159,103</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Scale EObjs</span>
-            <span class="mini-value">7,834,351</span>
+            <span class="mini-value" data-count="7834351">7,834,351</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Core Papers</span>
-            <span class="mini-value">3,000</span>
+            <span class="mini-value" data-count="3000">3,000</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Core Claims</span>
-            <span class="mini-value">114,320</span>
+            <span class="mini-value" data-count="114320">114,320</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Core EObjs</span>
-            <span class="mini-value">799,289</span>
+            <span class="mini-value" data-count="799289">799,289</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Gold Papers</span>
-            <span class="mini-value">563</span>
+            <span class="mini-value" data-count="563">563</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Gold Claims</span>
-            <span class="mini-value">5,821</span>
+            <span class="mini-value" data-count="5821">5,821</span>
           </div>
-          <div>
+          <div class="mini-stat">
             <span class="mini-key">Gold Cited EObjs</span>
-            <span class="mini-value">69,852</span>
+            <span class="mini-value" data-count="69852">69,852</span>
           </div>
         </div>
-        <p class="panel-note">
-          Source: Table 2 (<code>tab:layer_stats</code>) in the paper.
-        </p>
       </aside>
     </section>
 
@@ -177,6 +175,35 @@
         <article class="tier-card">
           <h3>Protocol</h3>
           <p>Gold uses set-of-sets evidence supervision and best-match scoring for robust evaluation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="examples">
+      <div class="section-head">
+        <p class="eyebrow">Examples</p>
+        <h2>PDF Evidence Examples</h2>
+      </div>
+      <div class="example-grid">
+        <article class="example-card">
+          <h3>Example Figure 1</h3>
+          <p>Reference sample from the benchmark evidence space.</p>
+          <iframe
+            class="pdf-frame"
+            src="assets/fig1.pdf#view=FitH"
+            title="ADAM-Bench example fig1"
+          ></iframe>
+          <a class="inline-link" href="assets/fig1.pdf" target="_blank" rel="noopener">Open <code>assets/fig1.pdf</code></a>
+        </article>
+        <article class="example-card">
+          <h3>Example Figure 2</h3>
+          <p>Additional sample for inspection and UI integration tests.</p>
+          <iframe
+            class="pdf-frame"
+            src="assets/fig2.pdf#view=FitH"
+            title="ADAM-Bench example fig2"
+          ></iframe>
+          <a class="inline-link" href="assets/fig2.pdf" target="_blank" rel="noopener">Open <code>assets/fig2.pdf</code></a>
         </article>
       </div>
     </section>
